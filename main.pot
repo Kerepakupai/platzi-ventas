@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-12-25 17:48+Pacific SA Daylight Time\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: main.py:9
+msgid "Client already is in the client's list"
+msgstr ""
+
+#: main.py:27
+msgid "WELCOME TO PLATZI VENTAS"
+msgstr ""
+
+#: main.py:29
+msgid "What would you like to do today?"
+msgstr ""
+
+#: main.py:30
+msgid "[C]reate client"
+msgstr ""
+
+#: main.py:31
+msgid "[D]elete client"
+msgstr ""
+
+#: main.py:44
+msgid "What is the client name? "
+msgstr ""
+
+#: main.py:50
+msgid "Invalid command"
+msgstr ""
+

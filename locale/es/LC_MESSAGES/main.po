@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-12-25 17:48+Pacific SA Daylight Time\n"
+"PO-Revision-Date: 2018-12-25 18:02-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.2\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es_CL\n"
+
+#: main.py:9
+msgid "Client already is in the client's list"
+msgstr "El cliente ya se encuentra en la lista de clientes"
+
+#: main.py:27
+msgid "WELCOME TO PLATZI VENTAS"
+msgstr "BIENVENIDO A PLATZI VENTAS"
+
+#: main.py:29
+msgid "What would you like to do today?"
+msgstr "Que le gustaria realizar hoy?"
+
+#: main.py:30
+msgid "[C]reate client"
+msgstr "[C]rear cliente"
+
+#: main.py:31
+msgid "[D]elete client"
+msgstr "[E]liminar cliente"
+
+#: main.py:44
+msgid "What is the client name? "
+msgstr "Cual es el nombre del cliente?"
+
+#: main.py:50
+msgid "Invalid command"
+msgstr "Comando Invalido"
