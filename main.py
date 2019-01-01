@@ -6,8 +6,7 @@ import sys
 
 _ = gettext.gettext
 
-clients = 'pablo,ricardo,'
-
+clients = ['David', 'Mariela', 'Karla']
 
 def create_client(client_name):   
     global clients   
@@ -15,26 +14,18 @@ def create_client(client_name):
     if client_name in clients:
         print(_('Client already is in the client\'s list'))
     else:
-        clients += client_name
-        _add_comma()
+        clients.append(client_name)
 
 
 def list_clients():    
     print(clients)
     
 
-def _add_comma():
-    global clients
-
-    clients += ','
-
-
-
 def delete_client(client_name):
     global clients
 
     if client_name in clients:
-        clients = clients.replace(client_name + ',', '')        
+        clients.remove(client_name)
     else:
         print(_('The client {} is not in client\'s list'.format(client_name)))
 
@@ -43,7 +34,7 @@ def update_client(client_name, new_client_name):
     global clients
 
     if client_name in clients:
-        clients = clients.replace(client_name, new_client_name)
+        clients[clients.index(client_name)] = new_client_name
     else:
         print(_('The client {} is not in client\'s list'.format(client_name)))
 
