@@ -6,20 +6,41 @@ import sys
 
 _ = gettext.gettext
 
-clients = ['David', 'Mariela', 'Karla']
+clients = [
+    {
+        'name': 'Pablo               ',
+        'company': 'Google              ',
+        'email': 'pablo@google.com    ',
+        'position': 'Software Engineer   ',
+    },
+    {
+        'name': 'Ricardo             ',
+        'company': 'Facebook            ',
+        'email': 'ricardo@facebook.com',
+        'position': 'Data Engineer       ',
+    },
+]
 
-def create_client(client_name):   
-    global clients   
 
-    if client_name in clients:
+def create_client(client):
+    global clients
+
+    if client in clients:
         print(_('Client already is in the client\'s list'))
     else:
-        clients.append(client_name)
+        clients.append(client)
 
 
-def list_clients():    
-    print(clients)
-    
+def list_clients():
+    for idx, client in enumerate(clients):
+        print('{uid} | {name} | {company} | {email} | {position}'.format(
+            uid=idx,
+            name=client['name'],
+            company=client['company'],
+            email=client['email'],
+            position=client['position']
+        ))
+
 
 def delete_client(client_name):
     global clients
@@ -51,40 +72,50 @@ def _print_welcome():
     print(_('[E]xit'))
 
 
-
 def print_options():
     print(_('Select an opction [C]reate [L]ist [U]pdate [D]elete [E]xit'))
 
 
-def get_client_name():
-    return input(_('What is the client name?  '))
+def _get_client_field(field_name):
+    field = None
+
+    while not field:
+        field = input(_('What is the client {}? '.format(field_name)))
+
+    return field
+
+
+def _get_client():
+    return {
+        'name': _get_client_field('name'),
+        'company': _get_client_field('company'),
+        'email': _get_client_field('email'),
+        'position': _get_client_field('position'),
+    }
+
 
 if __name__ == '__main__':
     _print_welcome()
-    
+
     command = ''
 
     while not command == 'E':
-        command = input().upper()        
+        command = input().upper()
         if command == 'C':
-            client_name = get_client_name()
-            create_client(client_name)     
-            list_clients()       
+            create_client(_get_client())
+            list_clients()
         elif command == 'L':
-            list_clients()        
+            list_clients()
         elif command == 'D':
             client_name = get_client_name()
             delete_client(client_name)
-            list_clients()          
+            list_clients()
         elif command == 'U':
             client_name = get_client_name()
             new_client_name = input(_('What is the new client name?  '))
             update_client(client_name, new_client_name)
-            list_clients() 
+            list_clients()
         else:
             print(_('Invalid command...'))
 
         print_options()
-            
-
-    
