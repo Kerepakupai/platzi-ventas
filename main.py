@@ -8,16 +8,16 @@ _ = gettext.gettext
 
 clients = [
     {
-        'name': 'Pablo               ',
-        'company': 'Google              ',
-        'email': 'pablo@google.com    ',
-        'position': 'Software Engineer   ',
+        'name': 'Pablo',
+        'company': 'Google',
+        'email': 'pablo@google.com',
+        'position': 'Software Engineer',
     },
     {
-        'name': 'Ricardo             ',
-        'company': 'Facebook            ',
+        'name': 'Ricardo ',
+        'company': 'Facebook',
         'email': 'ricardo@facebook.com',
-        'position': 'Data Engineer       ',
+        'position': 'Data Engineer',
     },
 ]
 
@@ -32,6 +32,9 @@ def create_client(client):
 
 
 def list_clients():
+    print(' uid | Name | Company | Email | Position')
+    print('*' * 50)
+
     for idx, client in enumerate(clients):
         print('{uid} | {name} | {company} | {email} | {position}'.format(
             uid=idx,
@@ -42,13 +45,13 @@ def list_clients():
         ))
 
 
-def delete_client(client_name):
+def delete_client(uid):
     global clients
 
-    if client_name in clients:
-        clients.remove(client_name)
-    else:
-        print(_('The client {} is not in client\'s list'.format(client_name)))
+    for idx, client in enumerate(clients):
+        if idx == uid:
+            del clients[idx]
+            break
 
 
 def update_client(client_name, new_client_name):
@@ -76,11 +79,11 @@ def print_options():
     print(_('Select an opction [C]reate [L]ist [U]pdate [D]elete [E]xit'))
 
 
-def _get_client_field(field_name):
+def _get_client_field(field_name, message='What is the client {}? '):
     field = None
 
     while not field:
-        field = input(_('What is the client {}? '.format(field_name)))
+        field = input(_(message.format(field_name)))
 
     return field
 
@@ -107,13 +110,12 @@ if __name__ == '__main__':
         elif command == 'L':
             list_clients()
         elif command == 'D':
-            client_name = get_client_name()
-            delete_client(client_name)
+            delete_client(int(_get_client_field('uid')))
             list_clients()
         elif command == 'U':
-            client_name = get_client_name()
+            # client_name = get_client_name()
             new_client_name = input(_('What is the new client name?  '))
-            update_client(client_name, new_client_name)
+            # update_client(client_name, new_client_name)
             list_clients()
         else:
             print(_('Invalid command...'))
